@@ -11,17 +11,36 @@ import com.lab.ali.iotlab.R;
 public class MainActivity extends AppCompatActivity {
 
     Button wifiButton;
+    Button GPSButton;
+    Button sensorsButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         wifiButton = findViewById(R.id.wifiBtn);
-
+        GPSButton = findViewById(R.id.gps);
+        sensorsButton = findViewById(R.id.sensors);
 
         wifiButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,Activity_Wifi.class);
+                startActivity(intent);
+            }
+
+        });
+        GPSButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,GPS.class);
+                startActivity(intent);
+            }
+        });
+
+        sensorsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,SensorsActivity.class);
                 startActivity(intent);
             }
         });

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/IOTLab.iml" filepath="$PROJECT_DIR$/IOTLab.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IOTLabProject.iml" filepath="$PROJECT_DIR$/IOTLabProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

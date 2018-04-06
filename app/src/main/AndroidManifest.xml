@@ -44,6 +44,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activities.Activity_Wifi"></activity>
+        <activity android:name=".Activities.SensorsActivity" />
     </application>
 
 </manifest>
