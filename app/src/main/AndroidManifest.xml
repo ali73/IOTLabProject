@@ -45,6 +45,8 @@
         </activity>
         <activity android:name=".Activities.Activity_Wifi"></activity>
         <activity android:name=".Activities.SensorsActivity" />
+        <activity android:name=".Activities.ActivityAccelerometer" />
+        <activity android:name=".Activities.ActivityOrientation" />
     </application>
 
 </manifest>

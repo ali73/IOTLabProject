@@ -13,6 +13,8 @@ public class MainActivity extends AppCompatActivity {
     Button wifiButton;
     Button GPSButton;
     Button sensorsButton;
+    Button accelerometer;
+    Button orientation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
         wifiButton = findViewById(R.id.wifiBtn);
         GPSButton = findViewById(R.id.gps);
         sensorsButton = findViewById(R.id.sensors);
+        accelerometer = findViewById(R.id.accelerometer);
+        orientation = findViewById(R.id.orientation);
 
         wifiButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +45,21 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,SensorsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        accelerometer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,ActivityAccelerometer.class);
+                startActivity(intent);
+            }
+        });
+        orientation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,ActivityOrientation.class);
                 startActivity(intent);
             }
         });

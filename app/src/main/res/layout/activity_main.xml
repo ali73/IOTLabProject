@@ -40,6 +40,27 @@
             android:layout_marginTop="10dp"
             android:text="Sensors"
             android:textSize="18sp"/>
+        <Button
+            android:id="@+id/accelerometer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sensors"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="10dp"
+            android:text="Accelerometer"
+            android:textSize="18sp"/>
+        <Button
+            android:id="@+id/orientation"
+            android:layout_below="@id/accelerometer"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="10dp"
+            android:text="oientation"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
     </RelativeLayout>
 
 </ScrollView>
