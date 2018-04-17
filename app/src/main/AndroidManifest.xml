@@ -47,6 +47,7 @@
         <activity android:name=".Activities.SensorsActivity" />
         <activity android:name=".Activities.ActivityAccelerometer" />
         <activity android:name=".Activities.ActivityOrientation" />
+        <activity android:name=".Activities.ActivityGyroscope" />
     </application>
 
 </manifest>
