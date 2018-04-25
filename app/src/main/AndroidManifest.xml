@@ -48,6 +48,8 @@
         <activity android:name=".Activities.ActivityAccelerometer" />
         <activity android:name=".Activities.ActivityOrientation" />
         <activity android:name=".Activities.ActivityGyroscope" />
+        <activity android:name=".Activities.ActivityMagnetometer" />
+        <activity android:name=".Activities.ActivityAngle" />
     </application>
 
 </manifest>

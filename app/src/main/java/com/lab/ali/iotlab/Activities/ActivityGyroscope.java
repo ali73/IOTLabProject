@@ -17,6 +17,7 @@ public class ActivityGyroscope  extends AppCompatActivity implements SensorEvent
     private Sensor gyroscopeSensor;
     private TextView axisX,axisY,axisZ;
     private double rotx = 0.0, rotY = 0.0 , rotZ = 0.0, timestamp;
+    double alpha = 0.95;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,9 +36,9 @@ public class ActivityGyroscope  extends AppCompatActivity implements SensorEvent
 
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
-//        rotx = (sensorEvent.timestamp-timestamp )/1000000000 * sensorEvent.values[0];
-//        rotY = (sensorEvent.timestamp-timestamp )/1000000000 * sensorEvent.values[1];
-//        rotZ = (sensorEvent.timestamp-timestamp )/1000000000 * sensorEvent.values[2];
+        rotx = (sensorEvent.timestamp-timestamp )/1000000000 * sensorEvent.values[0];
+        rotY = (sensorEvent.timestamp-timestamp )/1000000000 * sensorEvent.values[1];
+        rotZ = (sensorEvent.timestamp-timestamp )/1000000000 * sensorEvent.values[2];
         timestamp = sensorEvent.timestamp;
         rotx = sensorEvent.values[0];
         rotY = sensorEvent.values[1];

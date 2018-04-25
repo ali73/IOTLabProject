@@ -16,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
     Button accelerometer;
     Button orientation;
     Button gyroscope;
+    Button angleDetector;
+    Button magnetometer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
         accelerometer = findViewById(R.id.accelerometer);
         orientation = findViewById(R.id.orientation);
         gyroscope = findViewById(R.id.gyroscope);
+        magnetometer = findViewById(R.id.magnetometer);
+        angleDetector = findViewById(R.id.angle);
         wifiButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,6 +72,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,ActivityGyroscope.class);
+                startActivity(intent);
+            }
+        });
+        magnetometer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,ActivityMagnetometer.class);
+                startActivity(intent);
+            }
+        });
+        angleDetector.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,ActivityAngle.class);
                 startActivity(intent);
             }
         });

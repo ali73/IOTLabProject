@@ -56,7 +56,7 @@
             android:background="@color/colorPrimaryDark"
             android:textColor="@android:color/white"
             android:layout_marginTop="10dp"
-            android:text="oientation"
+            android:text="orientation"
             android:textSize="18sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -69,6 +69,26 @@
             android:textColor="@android:color/white"
             android:layout_marginTop="10dp"
             android:text="Gyroscope"
+            android:textSize="18sp"/>
+        <Button
+            android:id="@+id/angle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/gyroscope"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="10dp"
+            android:text="Angle detector"
+            android:textSize="18sp"/>
+        <Button
+            android:id="@+id/magnetometer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/angle"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="10dp"
+            android:text="Magnetometer"
             android:textSize="18sp"/>
     </RelativeLayout>
 
