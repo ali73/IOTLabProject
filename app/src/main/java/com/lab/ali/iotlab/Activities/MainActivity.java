@@ -18,10 +18,16 @@ public class MainActivity extends AppCompatActivity {
     Button gyroscope;
     Button angleDetector;
     Button magnetometer;
+    Button bluetooth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        findViewsFromID();
+        setButtonOnClicks();
+    }
+
+    public void findViewsFromID(){
         wifiButton = findViewById(R.id.wifiBtn);
         GPSButton = findViewById(R.id.gps);
         sensorsButton = findViewById(R.id.sensors);
@@ -30,6 +36,10 @@ public class MainActivity extends AppCompatActivity {
         gyroscope = findViewById(R.id.gyroscope);
         magnetometer = findViewById(R.id.magnetometer);
         angleDetector = findViewById(R.id.angle);
+        bluetooth  = findViewById(R.id.bluetooth);
+    }
+
+    public void setButtonOnClicks(){
         wifiButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,6 +97,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,ActivityAngle.class);
                 startActivity(intent);
+            }
+        });
+        bluetooth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            Intent intent =  new Intent(MainActivity.this,ActivityBluetooth.class);
+            startActivity(intent);
             }
         });
     }

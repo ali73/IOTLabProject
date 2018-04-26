@@ -90,6 +90,16 @@
             android:layout_marginTop="10dp"
             android:text="Magnetometer"
             android:textSize="18sp"/>
+        <Button
+            android:id="@+id/bluetooth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/angle"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="10dp"
+            android:text="Bluetooth"
+            android:textSize="18sp"/>
     </RelativeLayout>
 
 </ScrollView>

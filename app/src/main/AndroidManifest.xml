@@ -6,6 +6,7 @@
     <uses-permission
         android:required="true"
         android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission
         android:required="true"
         android:name="android.permission.CHANGE_WIFI_STATE"/>
@@ -50,6 +51,7 @@
         <activity android:name=".Activities.ActivityGyroscope" />
         <activity android:name=".Activities.ActivityMagnetometer" />
         <activity android:name=".Activities.ActivityAngle" />
+        <activity android:name=".Activities.ActivityBluetooth" />
     </application>
 
 </manifest>
