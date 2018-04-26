@@ -6,12 +6,27 @@
 
     <TextView
         android:id="@+id/bluetooth"
-        android:textSize="18sp"
-        android:layout_width="match_parent"
+        android:textSize="24sp"
+        android:layout_marginTop="5dp"
+        android:padding="5dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <Button
         android:id="@+id/bswitch"
+        android:padding="5dp"
         android:layout_below="@id/bluetooth"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/listAll"
+        android:padding="5dp"
+        android:layout_below="@id/bswitch"
+        android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
         android:background="@color/colorPrimary"
         android:textColor="@android:color/white"

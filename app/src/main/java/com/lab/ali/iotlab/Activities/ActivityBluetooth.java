@@ -25,6 +25,7 @@ public class ActivityBluetooth extends AppCompatActivity {
     BluetoothAdapter mAdapter;
     Handler stateChecker;
     Button bSwitch;
+    Button listAllDevices;
     View.OnClickListener bSwitchOnclk;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -32,6 +33,7 @@ public class ActivityBluetooth extends AppCompatActivity {
         setContentView(R.layout.activity_bluetooth);
         bluetoothStatus = findViewById(R.id.bluetooth);
         bSwitch = findViewById(R.id.bswitch);
+        listAllDevices = findViewById(R.id.listAll);
         mAdapter = BluetoothAdapter.getDefaultAdapter();
         initBswitchOnClick();
         if (mAdapter == null)
@@ -47,6 +49,16 @@ public class ActivityBluetooth extends AppCompatActivity {
             });
             alertDialog.show();
         }
+        listAllDevices.setText("Find devices");
+        listAllDevices.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mAdapter.isEnabled()){
+                    Intent intent = new Intent(ActivityBluetooth.this,ActivityBluetoothList.class);
+                    startActivity(intent);
+                }
+            }
+        });
         stateChecker = new Handler();
         bluetoothStatus.setText("Bluetooth status");
         startStatusUpdate();

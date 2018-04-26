@@ -5,8 +5,22 @@
     android:layout_height="match_parent"
     android:padding="5dp">
 
+    <Button
+        android:id="@+id/scan"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        android:padding="5dp"
+        android:textSize="16sp"
+        android:text="scan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/device_list"
+        android:layout_above="@id/scan"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
