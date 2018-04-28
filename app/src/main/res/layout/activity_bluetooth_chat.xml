@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/inbox"
+        android:padding="3dp"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:layout_width="match_parent"
+        android:layout_height="120dp" />
+    <EditText
+        android:id="@+id/outbox"
+        android:padding="3dp"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:layout_below="@id/inbox"
+        android:layout_width="match_parent"
+        android:layout_height="120dp" />
+    <Button
+        android:id="@+id/send"
+        android:layout_below="@id/outbox"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:text="send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>
