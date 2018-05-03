@@ -14,7 +14,7 @@ public class BluetoothServer extends Thread {
 
     public BluetoothServer(BluetoothAdapter adapter){
         BluetoothServerSocket temp = null;
-        UUID uuid = UUID.randomUUID();
+        UUID uuid = UUID.fromString("56e8a14a-80b3-11e5-8bcf-feff819cdc9f");
         try {
             temp = adapter.listenUsingRfcommWithServiceRecord("Myname",uuid);
         } catch (IOException e) {

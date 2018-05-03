@@ -18,7 +18,8 @@ public class BluetoothClient extends Thread {
         BluetoothSocket socket = null;
         mmDevice =device;
         try {
-            socket = device.createRfcommSocketToServiceRecord(UUID.randomUUID());
+            UUID uuid = UUID.fromString("56e8a14a-80b3-11e5-8bcf-feff819cdc9f");
+            socket = device.createRfcommSocketToServiceRecord(uuid);
         } catch (IOException e) {
             e.printStackTrace();
         }

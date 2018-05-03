@@ -3,6 +3,7 @@ package com.lab.ali.iotlab.Adapters;
 import android.app.AlertDialog;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -56,6 +57,20 @@ public class BluetoothListAdapter extends RecyclerView.Adapter<BluetoothDeviceIt
                         e.printStackTrace();
                     }
                 }
+                BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
+                    @Override
+                    public void onReceive(Context context, Intent intent) {
+                        if (intent.getAction().equals(BluetoothDevice.ACTION_BOND_STATE_CHANGED)){
+                            BluetoothClient client = new BluetoothClient(_data.get(position),adapter);
+                            client.start();
+                        }
+                    }
+                };
+                IntentFilter intentFilter = new IntentFilter();
+                intentFilter.addAction(BluetoothDevice.ACTION_BOND_STATE_CHANGED);
+                context.registerReceiver(broadcastReceiver,intentFilter);
+                BluetoothClient client = new BluetoothClient(_data.get(position),adapter);
+                client.start();
 //                Set<BluetoothDevice> paired = BluetoothAdapter.getDefaultAdapter().getBondedDevices();
 //                if (paired.contains(_data.get(position))){
 //                    BluetoothClient bluetoothClient = new BluetoothClient(_data.get(position),adapter);
