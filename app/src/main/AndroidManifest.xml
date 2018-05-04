@@ -54,6 +54,7 @@
         <activity android:name=".Activities.ActivityBluetooth" />
         <activity android:name=".Activities.ActivityBluetoothList" />
         <activity android:name=".Activities.ActivityBluetoothChat" />
+        <activity android:name=".Activities.ActivityBLE" />
     </application>
 
 </manifest>

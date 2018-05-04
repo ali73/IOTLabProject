@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     Button angleDetector;
     Button magnetometer;
     Button bluetooth;
+    Button ble;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         magnetometer = findViewById(R.id.magnetometer);
         angleDetector = findViewById(R.id.angle);
         bluetooth  = findViewById(R.id.bluetooth);
+        ble = findViewById(R.id.ble);
     }
 
     public void setButtonOnClicks(){
@@ -104,6 +106,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
             Intent intent =  new Intent(MainActivity.this,ActivityBluetooth.class);
             startActivity(intent);
+            }
+        });
+        ble.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,ActivityBLE.class);
+                startActivity(intent);
             }
         });
     }
