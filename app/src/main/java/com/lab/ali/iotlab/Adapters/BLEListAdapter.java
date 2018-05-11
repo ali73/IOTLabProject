@@ -10,8 +10,10 @@ import com.lab.ali.iotlab.ViewHolders.BluetoothDeviceItem;
 
 public class BLEListAdapter extends BluetoothListAdapter {
     BluetoothGatt mBlueGatt;
+    MyBluetoothGattCallBack gattCallBack;
     public BLEListAdapter(Context context, BluetoothAdapter adapter) {
         super(context, adapter);
+        gattCallBack = new MyBluetoothGattCallBack();
     }
 
     @Override
@@ -20,7 +22,7 @@ public class BLEListAdapter extends BluetoothListAdapter {
         holder.getLayout().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mBlueGatt = _data.get(position).connectGatt(context,true,new MyBluetoothGattCallBack());
+                mBlueGatt = _data.get(position).connectGatt(context,true,gattCallBack);
 
             }
         });

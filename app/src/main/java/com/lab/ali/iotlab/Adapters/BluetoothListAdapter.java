@@ -101,8 +101,10 @@ public class BluetoothListAdapter extends RecyclerView.Adapter<BluetoothDeviceIt
         this.notifyDataSetChanged();
     }
     public void addDevice(BluetoothDevice bluetooth){
-        _data.add(bluetooth);
-        notifyDataSetChanged();
+        if (!_data.contains(bluetooth)){
+            _data.add(bluetooth);
+            notifyDataSetChanged();
+        }
     }
     public void clear(){
         this._data.clear();

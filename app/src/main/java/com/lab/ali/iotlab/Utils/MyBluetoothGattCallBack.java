@@ -5,17 +5,19 @@ import android.bluetooth.BluetoothGattCallback;
 import android.bluetooth.BluetoothGattCharacteristic;
 import android.util.Log;
 
+import static android.bluetooth.BluetoothGatt.GATT_SUCCESS;
+
 public class MyBluetoothGattCallBack extends BluetoothGattCallback{
     @Override
     public void onConnectionStateChange(BluetoothGatt gatt, int status, int newState) {
         super.onConnectionStateChange(gatt, status, newState);
         Log.d("GATTCALLBACK","Connection state changed");
         Log.d("GATTCALLBACK",String.valueOf(newState));
-        if (newState==BluetoothGatt.STATE_CONNECTED){
-
+        if (newState==BluetoothGatt.STATE_CONNECTED && status ==GATT_SUCCESS){
+            Log.d("GATT","Connected to device ");
         }
         else if (newState == BluetoothGatt.STATE_DISCONNECTED){
-
+             Log.d("GATT","disconnected from device");
         }
     }
 

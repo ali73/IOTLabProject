@@ -5,22 +5,13 @@
     android:layout_height="match_parent">
 
 
-    <Button
-        android:id="@+id/scan"
-        android:padding="5dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimary"
-        android:textColor="@android:color/white"
-        android:textSize="18sp"
-        android:text="scan"
+    <android.support.design.widget.TabLayout
+        android:id="@+id/ble_tablayout"
         android:layout_width="match_parent"
-        android:layout_margin="10dp"
-        android:layout_height="wrap_content" />
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/ble_list"
-        android:padding="5dp"
-        android:layout_above="@id/scan"
+        android:layout_height="wrap_content"/>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/ble_viewpager"
+        android:layout_below="@id/ble_tablayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
