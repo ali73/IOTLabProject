@@ -110,6 +110,17 @@
             android:layout_marginTop="10dp"
             android:text="BLE"
             android:textSize="18sp"/>
+
+        <Button
+            android:id="@+id/wifip2p"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ble"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="10dp"
+            android:text="WIFI_P2P"
+            android:textSize="18sp"/>
     </RelativeLayout>
 
 </ScrollView>
