@@ -27,7 +27,7 @@ public class ActivityOrientation extends AppCompatActivity  implements SensorEve
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_orientation);
-        textView = findViewById(R.id.textview);
+        textView = findViewById(R.id.serviceUUID);
 
 
         sensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);

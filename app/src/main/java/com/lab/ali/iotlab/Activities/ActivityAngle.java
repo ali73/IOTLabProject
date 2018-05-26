@@ -31,7 +31,7 @@ public class ActivityAngle extends AppCompatActivity implements SensorEventListe
         sensorManager.registerListener(this,mSensor,SensorManager.SENSOR_DELAY_NORMAL);
         start = findViewById(R.id.start);
         end = findViewById(R.id.end);
-        textView = findViewById(R.id.textview);
+        textView = findViewById(R.id.serviceUUID);
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

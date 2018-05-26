@@ -5,8 +5,9 @@
     android:padding="5dp"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/serviceUUID"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/ble_services"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"/>
+
 </RelativeLayout>

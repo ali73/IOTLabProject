@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     Button bluetooth;
     Button ble;
     Button wifi_p2p;
+    Button dataStorage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         bluetooth  = findViewById(R.id.bluetooth);
         ble = findViewById(R.id.ble);
         wifi_p2p = findViewById(R.id.wifip2p);
+        dataStorage = findViewById(R.id.dataStorage);
     }
 
     public void setButtonOnClicks(){
@@ -121,6 +123,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,Activity_wifiP2P.class);
+                startActivity(intent);
+            }
+        });
+        dataStorage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,ActivityDataStorage.class);
                 startActivity(intent);
             }
         });

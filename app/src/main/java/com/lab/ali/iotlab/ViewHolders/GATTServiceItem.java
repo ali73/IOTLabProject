@@ -7,13 +7,25 @@ import android.widget.TextView;
 import com.lab.ali.iotlab.R;
 
 public class GATTServiceItem  extends RecyclerView.ViewHolder{
-    TextView textView;
+    private TextView textView;
+    private TextView Type;
+    private TextView characteristics;
     public GATTServiceItem(View itemView) {
         super(itemView);
-        textView = itemView.findViewById(R.id.textview);
+        textView = itemView.findViewById(R.id.serviceUUID);
+        Type = itemView.findViewById(R.id.serviceType);
+        characteristics = itemView.findViewById(R.id.characteristic);
     }
 
     public TextView getTextView() {
         return textView;
+    }
+
+    public TextView getType() {
+        return Type;
+    }
+
+    public TextView getCharacteristics() {
+        return characteristics;
     }
 }

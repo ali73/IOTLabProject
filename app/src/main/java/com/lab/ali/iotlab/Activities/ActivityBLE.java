@@ -1,5 +1,6 @@
 package com.lab.ali.iotlab.Activities;
 
+import android.bluetooth.BluetoothGattService;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,9 +11,13 @@ import android.support.v7.app.AppCompatActivity;
 import com.lab.ali.iotlab.R;
 import com.lab.ali.iotlab.Utils.PagerAdapter_BLE;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ActivityBLE extends AppCompatActivity {
 
-    PagerAdapter_BLE pagerAdapter_ble ;
+    public static List<BluetoothGattService> serviceList = new ArrayList<>();
+    public static PagerAdapter_BLE pagerAdapter_ble ;
     ViewPager viewPager;
     TabLayout tabLayout;
     @Override
@@ -37,4 +42,7 @@ public class ActivityBLE extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
     }
 
+    public void goToDetails(){
+        viewPager.setCurrentItem(2,true);
+    }
 }

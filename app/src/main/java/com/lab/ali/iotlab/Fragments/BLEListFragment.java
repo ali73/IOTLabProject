@@ -23,6 +23,7 @@ import android.widget.Button;
 import com.lab.ali.iotlab.Activities.ActivityBLE;
 import com.lab.ali.iotlab.Adapters.BLEListAdapter;
 import com.lab.ali.iotlab.R;
+import com.lab.ali.iotlab.Utils.CallBack;
 import com.lab.ali.iotlab.Utils.LoadingDialog;
 
 public class BLEListFragment extends Fragment implements BluetoothAdapter.LeScanCallback{
