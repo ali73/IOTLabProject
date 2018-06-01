@@ -6,12 +6,15 @@ import android.os.Environment;
 import android.os.StatFs;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.lab.ali.iotlab.R;
+
+import java.io.File;
 
 public class ActivityDataStorage extends AppCompatActivity {
     EditText input;
@@ -42,11 +45,8 @@ public class ActivityDataStorage extends AppCompatActivity {
             }
         });
         if (isExternalStorageWritable()){
-            StatFs stat = new
-                    StatFs(Environment.getExternalStorageDirectory().getPath());
-            long bytesAvailable = stat.getTotalBytes();
-            long gigAvailable = bytesAvailable / (1024*1024*1024);
-            externalStorageState.setText(String.format("%d",gigAvailable));
+            long megAvailable = getTotalExternalMemorySize() / (1024 * 1024*1024);
+            externalStorageState.setText(String .valueOf(megAvailable));
         }
         else
             externalStorageState.setText("No external device");
@@ -74,4 +74,25 @@ public class ActivityDataStorage extends AppCompatActivity {
         }
         return false;
     }
+
+    public static long getTotalExternalMemorySize() {
+        File file = new File("/storage");
+        File external = null;
+        File [] dirs = file.listFiles();
+
+        for (File f:dirs){
+            if (Environment.isExternalStorageRemovable(f)){
+                external = f;
+                break;
+            }
+        }
+
+        StatFs statFs = new StatFs(external.getPath());
+        long blockSize = statFs.getBlockSize();
+        long totalSize = statFs.getBlockCount()*blockSize;
+        long availableSize = statFs.getAvailableBlocks()*blockSize;
+        long freeSize = statFs.getFreeBlocks()*blockSize;
+        return totalSize;
+    }
+
 }
