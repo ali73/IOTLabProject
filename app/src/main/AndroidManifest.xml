@@ -62,6 +62,7 @@
         <activity android:name=".Activities.ActivityBLE" />
         <activity android:name=".Activities.Activity_wifiP2P" />
         <activity android:name=".Activities.ActivityDataStorage" />
+        <activity android:name=".Activities.GPS" />
     </application>
 
 </manifest>
