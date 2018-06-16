@@ -75,4 +75,8 @@ public class IotLabP2PManager {
     public void connect(WifiP2pConfig config, WifiP2pManager.ActionListener actionListener){
         p2pManager.connect(mChannel,config,actionListener);
     }
+
+    public WifiP2pManager.Channel getmChannel() {
+        return mChannel;
+    }
 }

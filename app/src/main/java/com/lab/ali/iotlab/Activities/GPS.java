@@ -44,7 +44,8 @@ public class GPS extends AppCompatActivity implements LocationListener {
                 else if (netLoc.getTime()<location.getTime()){
                     if (netLoc.getAccuracy()>location.getAccuracy()){
                         netLoc = location;
-                        networkLocation.setText(String.valueOf(String.format(" NETWORK: Latitude:%f ,Longitude%f, Altitude:%f\nSpeed: %f",netLoc.getLatitude(),netLoc.getLongitude(),netLoc.getAltitude(),netLoc.getSpeed())));
+                        networkLocation.setText(String.valueOf(String.format(" NETWORK: Latitude:%f ,Longitude%f, Altitude:%f\nSpeed: %f"
+                                ,netLoc.getLatitude(),netLoc.getLongitude(),netLoc.getAltitude(),netLoc.getSpeed())));
                     }
                 }
             }
@@ -99,9 +100,9 @@ public class GPS extends AppCompatActivity implements LocationListener {
             public void onClick(View v) {
 //                TODO: get location and show on textviews
                 if (ActivityCompat.checkSelfPermission(GPS.this, Manifest.permission.ACCESS_FINE_LOCATION) !=
-                        PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(GPS.this,
+                        PackageManager.PERMISSION_GRANTED || ActivityCompat.checkSelfPermission(GPS.this,
                         Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED
-                        && ActivityCompat.checkSelfPermission(GPS.this,Manifest.permission.INTERNET)!=PackageManager.PERMISSION_GRANTED) {
+                        || ActivityCompat.checkSelfPermission(GPS.this,Manifest.permission.INTERNET)!=PackageManager.PERMISSION_GRANTED) {
                     ActivityCompat.requestPermissions(GPS.this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION,
                             Manifest.permission.INTERNET,Manifest.permission.ACCESS_COARSE_LOCATION},10);
                     // TODO: Consider calling

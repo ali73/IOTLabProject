@@ -90,11 +90,27 @@ public class Activity_wifiP2P extends AppCompatActivity {
             }
         });
 
-
+        broadCastReceiver.setP2pPeerChangedCallback(new CallBack() {
+            @Override
+            public void callBack(@Nullable Intent intent) {
+                mManager.getP2pManager().requestPeers(mManager.getmChannel(),mManager.getPeerListListener());
+            }
+        });
         scanForPeerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mManager.scanForPeer();
+                mManager.discoverPeers(new WifiP2pManager.ActionListener() {
+                    @Override
+                    public void onSuccess() {
+                        Log.d("DISCOVER","discvoered");
+
+                    }
+
+                    @Override
+                    public void onFailure(int reason) {
+
+                    }
+                });
             }
         });
 

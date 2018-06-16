@@ -94,7 +94,7 @@
             android:id="@+id/bluetooth"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/angle"
+            android:layout_below="@id/magnetometer"
             android:background="@color/colorPrimaryDark"
             android:textColor="@android:color/white"
             android:layout_marginTop="10dp"
