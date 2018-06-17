@@ -35,6 +35,13 @@ public class WifiP2PDeviceAdapter extends RecyclerView.Adapter<WifiP2PDeviceItem
     public void onBindViewHolder(WifiP2PDeviceItem holder, final int position) {
         holder.getMac().setText(_data.get(position).deviceAddress);
         holder.getTitle().setText(_data.get(position).deviceName);
+        if (_data.get(position).status==WifiP2pDevice.CONNECTED){
+            holder.getState().setVisibility(View.VISIBLE);
+            holder.getState().setText("Connected");
+        }
+        else {
+            holder.getState().setVisibility(View.GONE);
+        }
         holder.getLayout().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -43,6 +50,7 @@ public class WifiP2PDeviceAdapter extends RecyclerView.Adapter<WifiP2PDeviceItem
                 config.wps.setup = WpsInfo.PBC;
                 Intent intent = new Intent();
                 intent.putExtra("config",config);
+                intent.putExtra("index",position);
                 connectionCallback.callBack(intent);
             }
         });

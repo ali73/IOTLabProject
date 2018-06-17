@@ -67,6 +67,7 @@ public class Activity_wifiP2P extends AppCompatActivity {
                     @Override
                     public void onSuccess() {
                         Log.d("Connect","Successful");
+                        adapter.notifyDataSetChanged();
                     }
 
                     @Override
@@ -103,7 +104,6 @@ public class Activity_wifiP2P extends AppCompatActivity {
                     @Override
                     public void onSuccess() {
                         Log.d("DISCOVER","discvoered");
-
                     }
 
                     @Override

@@ -9,12 +9,13 @@ import com.lab.ali.iotlab.R;
 
 public class WifiP2PDeviceItem  extends RecyclerView.ViewHolder{
     private RelativeLayout layout;
-    private TextView title,mac;
+    private TextView title,mac, state;
     public WifiP2PDeviceItem(View itemView) {
         super(itemView);
         this.layout = itemView.findViewById(R.id.layout);
         this.title = itemView.findViewById(R.id.deviceName);
         this.mac = itemView.findViewById(R.id.deviceMac);
+        state = itemView.findViewById(R.id.state);
     }
 
     public RelativeLayout getLayout() {
@@ -27,5 +28,9 @@ public class WifiP2PDeviceItem  extends RecyclerView.ViewHolder{
 
     public TextView getTitle() {
         return title;
+    }
+
+    public TextView getState() {
+        return state;
     }
 }
