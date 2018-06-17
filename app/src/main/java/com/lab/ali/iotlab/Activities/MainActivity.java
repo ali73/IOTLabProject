@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     Button ble;
     Button wifi_p2p;
     Button dataStorage;
+    Button sql;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         ble = findViewById(R.id.ble);
         wifi_p2p = findViewById(R.id.wifip2p);
         dataStorage = findViewById(R.id.dataStorage);
+        sql = findViewById(R.id.sql);
     }
 
     public void setButtonOnClicks(){
@@ -130,6 +132,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,ActivityDataStorage.class);
+                startActivity(intent);
+            }
+        });
+        sql.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,ActivitySql.class);
                 startActivity(intent);
             }
         });

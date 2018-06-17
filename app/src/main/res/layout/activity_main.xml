@@ -131,6 +131,16 @@
             android:layout_marginTop="10dp"
             android:text="Data Storage"
             android:textSize="18sp"/>
+        <Button
+            android:id="@+id/sql"
+            android:text="SQL"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            android:layout_below="@id/dataStorage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
     </RelativeLayout>
 
 </ScrollView>
